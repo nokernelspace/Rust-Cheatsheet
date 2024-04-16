@@ -153,7 +153,7 @@ fn double(n: i32) -> i32 {
 -   The **stack** memory grows **towards lower memory addresses (or downwards)**, starting from a [higher address](#high-memory-address) of about `0x7fffffffffff`.
 -   It is an **abstraction concept** that is used to create **processes/threads** in an operating system, and is commonly found in most programs.
 -   Each process starts a **single thread by default** and each process has its **own separate stack**. Each process typically starts with a **single thread**, and **each thread has its own separate stack**.
--   The **default stack size** in a 64-bit Rust program is 2MB, but it can grow up to a **limit of 8MB**.
+-   The **default stack size** in a 64-bit Rust program is **2MB**, but it can grow up to a **limit of 8MB** (the default size in a Unix system). If you have a specific case that you need more memory for the stack (generally a faster computation), you can use `std::thread::Builder` to increase the **operating system's default stack**.
 -   If your program **exceeds the stack size limit**, you may encounter a **"stack overflow" error**.
 -   The size of the `stack pointer` is determined by its data type. For example, a `i32` requires **4 bytes**, and a `i64` requires **8 bytes**.
 -   Because the stack is statically allocated, it **does not need to be resized using system calls during runtime, which can make execution faster**.
