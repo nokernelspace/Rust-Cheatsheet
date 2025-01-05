@@ -291,7 +291,7 @@ Waker                ⮑ let waker: Waker = noop_waker();
 
 
 
-CONCURRENCY + ASYNC     | EXAMPLE
+CONCURRENCY TYPE        | EXAMPLE
 ----------------------- | ---------------------------------------------------
 std::thread             ⮑ thread::spawn( move || { })
 std::sync::mpsc         ⮑ let (tx, rx) = mpsc::channel();
